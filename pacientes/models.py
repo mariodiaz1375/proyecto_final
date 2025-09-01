@@ -3,17 +3,17 @@ from django.db import models
 # Create your models here.
 
 class Pacientes(models.Model):
-    nombre = models.CharField(max_length=255, db_column='nom_pac')
-    apellido = models.CharField(max_length=255, db_column='ape_pac')
-    dni = models.CharField(max_length=255, db_column='dni_pac')
-    fecha_nacimiento = models.DateField(db_column='dni_pac')
-    domicilio = models.CharField(max_length=255, db_column='dom_pac')
-    telefono = models.CharField(max_length=255, db_column='tel_pac')
-    email = models.EmailField(max_length=255, db_column='dni_pac')
+    nombre = models.CharField(max_length=255)
+    apellido = models.CharField(max_length=255)
+    dni = models.CharField(max_length=255)
+    fecha_nacimiento = models.DateField()
+    domicilio = models.CharField(max_length=255)
+    telefono = models.CharField(max_length=255)
+    email = models.EmailField(max_length=255)
     activo = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.nombre
+        return f"{self.dni} {self.nombre} {self.apellido}"
 
 
 
